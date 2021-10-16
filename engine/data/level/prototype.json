@@ -1,0 +1,19 @@
+{
+	"typeName": "Level",
+	"levelName": "main menu",
+	"gameMode": {
+		"typeName": "swMainMenuGameMode",
+		"spawnPlayer": false
+	},
+	"userInterfacePath": "ui/menu_view.json",
+	"levelEntities": [
+		{
+			"typeName": "EntityRef",
+			"resPath": "entity/map_camera.json",
+			"position": [ 0, 0 ]
+		}
+	],
+	"skybox": "sky/sky.dds",
+	"mapBounds": [ 1, 1 ],
+	"spawnPoints": []
+}
