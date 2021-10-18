@@ -1,0 +1,17 @@
+{
+  "typeName": "coreEntity",
+  "components": [
+    {
+      "name": "camera",
+      "typeName": "coreCameraComponent",
+      "localPosition": [ 0, 0 ],
+      "localRotation": 0.0,
+      "ortoNear": 0.0,
+      "ortoFar": 3.0
+    },
+    {
+      "name": "input",
+      "typeName": "coreFreeCameraInputComponent"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
 #include "gameMode.h"
 
 
-ORB_REGISTER_TYPE( Level );
+ORB_REGISTER_TYPE_IN_NS( core, Level );
 
 namespace core
 {
@@ -26,12 +26,9 @@ namespace core
 	bool Level::Deserialize( const json& data )
 	{
 		ORB_DESERIALIZE_PROPERTY( m_levelName );
-		ORB_DESERIALIZE_PROPERTY( m_userInterfacePath );
 		ORB_DESERIALIZE_OBJECT_PROPERTY( m_gameMode );
 		ORB_DESERIALIZE_OBJECT_ARRAY_PROPERTY( m_levelEntities );
 		ORB_DESERIALIZE_PROPERTY( m_skybox );
-		ORB_DESERIALIZE_PROPERTY( m_mapBounds );
-		ORB_DESERIALIZE_PROPERTY( m_spawnPoints );
 
 		return Super::Deserialize( data );
 	}

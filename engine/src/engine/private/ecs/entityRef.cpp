@@ -1,7 +1,7 @@
 #include "entityRef.h"
 
 
-ORB_REGISTER_TYPE( EntityRef );
+ORB_REGISTER_TYPE_IN_NS( core, EntityRef );
 
 namespace core
 {

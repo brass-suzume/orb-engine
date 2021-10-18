@@ -1,7 +1,10 @@
 project( orbCore )
 
-add_library( ${PROJECT_NAME} ${ORB_CORE_SRC} )
 find_package( DirectXTK CONFIG REQUIRED )
+find_package( DirectXMath CONFIG REQUIRED )
+find_package( nlohmann_json CONFIG REQUIRED )
+
+add_library( ${PROJECT_NAME} )
 
 target_sources( ${PROJECT_NAME}
 					PRIVATE
@@ -27,21 +30,19 @@ target_sources( ${PROJECT_NAME}
 
 target_link_libraries( ${PROJECT_NAME}
 							PUBLIC
-								Microsoft::DirectXTK )
+								Microsoft::DirectXTK
+								nlohmann_json::nlohmann_json )
 
 target_include_directories( ${PROJECT_NAME}
-								PUBLIC							
-									${DirectXTK_INCLUDE_DIR}
 								PRIVATE
 									${PROJECT_SOURCE_DIR}/public
-									${PROJECT_SOURCE_DIR}/private
-									${NLOHMANN_JSON_DIRECTORY} )
+									${PROJECT_SOURCE_DIR}/private )
 
 target_precompile_headers( ${PROJECT_NAME} 
 								PUBLIC
 									<cstdio>
 									<string>
-									${NLOHMANN_JSON_DIRECTORY}/json.hpp
+									<nlohmann/json.hpp>
 									public/macroHelpers.h
 									public/orbForwards.h
 									public/orbAssert.h

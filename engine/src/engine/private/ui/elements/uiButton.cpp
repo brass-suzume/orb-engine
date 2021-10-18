@@ -4,7 +4,7 @@
 #include "inputHelpers.h"
 
 
-ORB_REGISTER_TYPE( UIButton );
+ORB_REGISTER_TYPE_IN_NS( core, UIButton );
 
 namespace core
 {

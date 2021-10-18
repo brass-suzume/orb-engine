@@ -6,7 +6,7 @@
 #include "inputComponent.h"
 
 
-ORB_REGISTER_TYPE( Player );
+ORB_REGISTER_TYPE_IN_NS( core, Player );
 
 namespace core
 {

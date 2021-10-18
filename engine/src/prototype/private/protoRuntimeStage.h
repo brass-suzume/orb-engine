@@ -1,14 +1,9 @@
 
-#include "engine/public/engineRuntimeStage.h"
+#include "engine/public/base/gameRuntimeStage.h"
 
 namespace proto
 {
-	class RuntimeStage : public core::EngineRuntimeStage
+	class RuntimeStage : public core::GameRuntimeStage
 	{
-
-	protected:
-		virtual bool OnInit( const core::RuntimeStageInitData& initData ) override;
-		virtual void OnUninit() override;
-		virtual void OnFrameTick( const core::TickInfo& tickInfo ) override;
 	};
 }

@@ -1,7 +1,7 @@
 #include "uiRootView.h"
 
 
-ORB_REGISTER_TYPE( UIRootView );
+ORB_REGISTER_TYPE_IN_NS( core, UIRootView );
 
 namespace core
 {

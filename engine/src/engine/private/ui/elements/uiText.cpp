@@ -3,7 +3,7 @@
 #include "rendererInterface.h"
 
 
-ORB_REGISTER_TYPE( UIText );
+ORB_REGISTER_TYPE_IN_NS( core, UIText );
 
 namespace core
 {

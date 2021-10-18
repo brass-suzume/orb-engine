@@ -1,0 +1,13 @@
+{
+	"typeName": "coreLevel",
+	"levelName": "empty",
+	"gameMode": {
+		"typeName": "coreGameMode",
+		"spawnPlayer": false
+	},
+	"levelEntities": [
+	],
+	"skybox": "",
+	"mapBounds": [ 1, 1 ],
+	"spawnPoints": []
+}

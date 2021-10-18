@@ -3,7 +3,7 @@
 #include "entityRef.h"
 
 
-ORB_REGISTER_TYPE( GameMode );
+ORB_REGISTER_TYPE_IN_NS( core, GameMode );
 
 namespace core
 {

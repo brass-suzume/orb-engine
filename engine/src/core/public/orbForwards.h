@@ -1,7 +1,7 @@
 #pragma once
 
-#include "DirectXTK/Mouse.h"
-#include "DirectXTK/Keyboard.h"
+#include <Mouse.h>
+#include <Keyboard.h>
 #include <DirectXColors.h>
 #include <DirectXCollision.h>
 

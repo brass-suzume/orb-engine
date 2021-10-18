@@ -7,7 +7,7 @@
 #include "mesh.h"
 
 
-ORB_REGISTER_TYPE( PhysicsComponent );
+ORB_REGISTER_TYPE_IN_NS( core, PhysicsComponent );
 
 namespace core
 {

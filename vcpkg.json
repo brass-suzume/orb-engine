@@ -1,0 +1,25 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg/master/scripts/vcpkg.schema.json",
+  "name": "orb-engine",
+  "version": "0.1.0",
+  "builtin-baseline": "5bdb9d60123df20c247a1654e6a1def51d6c5140",
+  "dependencies": [
+    "directxtk",
+    "catch2",
+    "nlohmann-json"
+  ],
+  "overrides": [
+    {
+      "name": "directxtk",
+      "version-string": "oct2021b"
+    },
+    {
+      "name": "catch2",
+      "version": "2.13.7#1"
+    },
+    {
+      "name": "nlohmann-json",
+      "version": "3.10.4#0"
+    }
+  ]
+}

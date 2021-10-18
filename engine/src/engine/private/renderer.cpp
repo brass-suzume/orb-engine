@@ -112,8 +112,11 @@ namespace core
 		SAFE_RELEASE_RES( m_skyboxTextureResource );
 		SAFE_RELEASE_RES( m_skyboxTextureResourceView );
 
-		const std::wstring wstrPath = ToWString( path );
-		ORB_ASSERT( SUCCEEDED( CreateDDSTextureFromFile( m_device, m_deviceCtx, wstrPath.c_str(), &m_skyboxTextureResource, &m_skyboxTextureResourceView ) ) );
+		if( !path.empty() )
+		{
+			const std::wstring wstrPath = ToWString( path );
+			ORB_ASSERT( SUCCEEDED( CreateDDSTextureFromFile( m_device, m_deviceCtx, wstrPath.c_str(), &m_skyboxTextureResource, &m_skyboxTextureResourceView ) ) );
+		}
 	}
 
 	void Skybox::Draw( DirectX::BasicEffect& effect )

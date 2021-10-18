@@ -1,7 +1,7 @@
 #include "serializable.h"
 
 
-ORB_REGISTER_ABSTRACT_TYPE( Serializable );
+ORB_REGISTER_ABSTRACT_TYPE_IN_NS( core, Serializable );
 
 namespace core
 {

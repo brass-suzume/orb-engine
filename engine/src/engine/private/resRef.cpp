@@ -1,7 +1,7 @@
 #include "resRef.h"
 
 
-ORB_REGISTER_TYPE( ResRef );
+ORB_REGISTER_TYPE_IN_NS( core, ResRef );
 
 namespace core
 {

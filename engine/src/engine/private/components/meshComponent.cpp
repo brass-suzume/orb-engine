@@ -7,7 +7,7 @@
 #include "rendererInterface.h"
 
 
-ORB_REGISTER_TYPE( MeshComponent );
+ORB_REGISTER_TYPE_IN_NS( core, MeshComponent );
 
 namespace core
 {

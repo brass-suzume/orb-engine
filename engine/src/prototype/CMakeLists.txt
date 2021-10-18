@@ -5,7 +5,9 @@ add_executable( ${PROJECT_NAME} WIN32 )
 target_sources( ${PROJECT_NAME} 
                     PRIVATE
                         $<TARGET_OBJECTS:orbEngine>
-                        private/main.cpp  "private/protoRuntimeStage.cpp" "private/protoRuntimeStage.h")
+                        private/main.cpp
+                        private/protoRuntimeStage.cpp
+                        private/protoRuntimeStage.h)
 
 target_link_libraries( ${PROJECT_NAME} LINK_PUBLIC orbEngine )
 target_include_directories( ${PROJECT_NAME} PRIVATE ${ORB_SRC_ROOT_DIR} )

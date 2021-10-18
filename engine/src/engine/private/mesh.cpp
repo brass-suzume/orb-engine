@@ -1,7 +1,7 @@
 #include "mesh.h"
 
 
-ORB_REGISTER_TYPE( Mesh );
+ORB_REGISTER_TYPE_IN_NS( core, Mesh );
 
 namespace core
 {

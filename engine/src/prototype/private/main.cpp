@@ -15,7 +15,7 @@ int __stdcall WinMain(
 {
 	auto protoRuntimeStage = std::make_unique< proto::RuntimeStage >();
 
-	core::EngineInitData initData{ "OrbProto", std::move( protoRuntimeStage ), "level/prototype" };
+	core::EngineInitData initData{ "OrbProto", std::move( protoRuntimeStage ), "level/empty" };
 	core::Engine engine;
 	engine.Start( std::move( initData ) );
 	return 0;

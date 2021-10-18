@@ -5,7 +5,7 @@
 #include "positionComponent.h"
 
 
-ORB_REGISTER_TYPE( Entity );
+ORB_REGISTER_TYPE_IN_NS( core, Entity );
 
 namespace core
 {

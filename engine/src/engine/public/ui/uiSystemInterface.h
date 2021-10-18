@@ -13,7 +13,7 @@ namespace core
 	{
 
 	public:
-		virtual std::weak_ptr< UIRootView > AddView( const char* viewResPath ) = 0;
+		virtual std::weak_ptr< UIRootView > AddView( const std::string& viewResPath ) = 0;
 		virtual void RemoveView( const std::weak_ptr< UIRootView >& view ) = 0;
 
 		virtual void HandleInput( const InputState& inputState ) = 0;

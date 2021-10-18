@@ -1,7 +1,7 @@
 #include "controller.h"
 
 
-ORB_REGISTER_ABSTRACT_TYPE( Controller );
+ORB_REGISTER_ABSTRACT_TYPE_IN_NS( core, Controller );
 
 namespace core
 {

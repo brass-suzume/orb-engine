@@ -3,7 +3,7 @@
 #include "gameInstance.h"
 
 
-ORB_REGISTER_TYPE( UIElement );
+ORB_REGISTER_TYPE_IN_NS( core, UIElement );
 
 namespace core
 {

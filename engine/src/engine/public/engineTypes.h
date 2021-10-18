@@ -1,6 +1,7 @@
 #pragma once
 
-#include "DirectXTK/SimpleMath.h"
+#include <SimpleMath.h>
+
 #include "core/public/callbackRegistry.h"
 
 namespace core

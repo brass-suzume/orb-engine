@@ -18,7 +18,7 @@ namespace core
 		virtual void OnLevelLoad( const std::shared_ptr< Level >& level ) override;
 		virtual void OnLevelUnload( const std::shared_ptr< Level >& level ) override;
 
-		virtual std::weak_ptr< UIRootView > AddView( const char* viewResPath ) override;
+		virtual std::weak_ptr< UIRootView > AddView( const std::string& viewResPath ) override;
 		virtual void RemoveView( const std::weak_ptr< UIRootView >& view ) override;
 
 		virtual void HandleInput( const InputState& inputState ) override;

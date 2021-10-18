@@ -30,13 +30,20 @@ namespace core
 
 	std::string DataCenter::GetFullResourcePath( const std::string& resPath )
 	{
-		if( !HasExtension( resPath ) )
+		if( !resPath.empty() )
 		{
-			return c_dataDirectory + resPath + c_dataFileExtension;
+			if( !HasExtension( resPath ) )
+			{
+				return c_dataDirectory + resPath + c_dataFileExtension;
+			}
+			else
+			{
+				return c_dataDirectory + resPath;
+			}
 		}
 		else
 		{
-			return c_dataDirectory + resPath;
+			return "";
 		}
 	}
 

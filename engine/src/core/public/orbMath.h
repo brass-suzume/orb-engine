@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DirectXTK/SimpleMath.h"
+#include <SimpleMath.h>
 
 using namespace DirectX::SimpleMath;
 using json = nlohmann::json;

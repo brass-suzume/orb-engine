@@ -30,7 +30,6 @@ namespace core
 
 	void UISystem::OnLevelLoad( const std::shared_ptr< Level >& level )
 	{
-		AddView( level->GetUserInterfacePath().c_str() );
 	}
 
 	void UISystem::OnLevelUnload( const std::shared_ptr< Level >& level )
@@ -38,8 +37,13 @@ namespace core
 		ClearStack();
 	}
 
-	std::weak_ptr< UIRootView > UISystem::AddView( const char* viewResPath )
+	std::weak_ptr< UIRootView > UISystem::AddView( const std::string& viewResPath )
 	{
+		if( viewResPath.empty() )
+		{
+			return std::weak_ptr< UIRootView >();
+		}
+
 		auto view = DataCenter::GetInstance().CreateSerializableFromResource< UIRootView >( viewResPath );
 
 		m_viewStack.push_back( view );
