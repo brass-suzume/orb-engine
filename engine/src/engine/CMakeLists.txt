@@ -1,9 +1,10 @@
 project( orbEngine )
 
-add_library( ${PROJECT_NAME} OBJECT )
+add_library( ${PROJECT_NAME} )
 
 target_sources( ${PROJECT_NAME}
 					PRIVATE
+						private/dataCenter.cpp
 						private/engine.cpp
 						private/engineStage.cpp
 						private/engineWindowInitStage.cpp
@@ -16,22 +17,25 @@ target_sources( ${PROJECT_NAME}
 						private/renderer.cpp
 						private/level.cpp
 						private/resRef.cpp
+						private/mathSerialization.cpp
 						private/mesh.cpp
+						private/serializable.cpp
+						private/serializationHelpers.cpp
 
-						private/base/gameRuntimeStage.cpp
-						private/base/gameInstance.cpp	
-						private/base/gameSystem.cpp
-						private/base/tickPerformer.cpp
-						private/base/tickPerformer.h
-						private/base/controller.cpp
-						private/base/player.cpp
-						private/base/controllerSystem.cpp
-						private/base/controllerSystem.h
-						private/base/gameMode.cpp
-						private/base/cameraSystem.cpp
-						private/base/cameraSystem.h
-						private/base/physicsSystem.cpp
-						private/base/physicsSystem.h
+						private/gameBase/gameRuntimeStage.cpp
+						private/gameBase/gameInstance.cpp	
+						private/gameBase/gameSystem.cpp
+						private/gameBase/tickPerformer.cpp
+						private/gameBase/tickPerformer.h
+						private/gameBase/controller.cpp
+						private/gameBase/player.cpp
+						private/gameBase/controllerSystem.cpp
+						private/gameBase/controllerSystem.h
+						private/gameBase/gameMode.cpp
+						private/gameBase/cameraSystem.cpp
+						private/gameBase/cameraSystem.h
+						private/gameBase/physicsSystem.cpp
+						private/gameBase/physicsSystem.h
 
 						private/ecs/entity.cpp
 						private/ecs/entityRef.cpp
@@ -54,28 +58,36 @@ target_sources( ${PROJECT_NAME}
 						private/ui/elements/uiButton.cpp
 
 					PUBLIC
-						public/engine.h
-						public/engineStage.h
+						public/callbackRegistry.h
+						public/dataCenter.h
+						public/engine.h						
 						public/engineRuntimeStage.h
-						public/engineInitData.h 
+						public/engineInitData.h
+						public/inputHelpers.h
+						public/engineStage.h
+						public/engineTypes.h
+						public/level.h
+						public/mathSerialization.h
+						public/mesh.h
+						public/orbForwards.h
 						public/rendererInterface.h
 						public/rendererTypes.h
-						public/level.h
-						public/engineTypes.h
 						public/resRef.h
-						public/mesh.h
-						public/inputHelpers.h
+						public/serializable.h
+						public/serializationHelpers.h
+						public/type.h
+						public/typeRegistrar.h
 
-						public/base/gameRuntimeStage.h
-						public/base/gameInstance.h		
-						public/base/gameSystem.h
-						public/base/tickRegister.h
-						public/base/controller.h
-						public/base/player.h
-						public/base/controllerSystemInterface.h
-						public/base/gameMode.h
-						public/base/cameraSystemInterface.h
-						public/base/physicsSystemInterface.h
+						public/gameBase/gameRuntimeStage.h
+						public/gameBase/gameInstance.h		
+						public/gameBase/gameSystem.h
+						public/gameBase/tickRegister.h
+						public/gameBase/controller.h
+						public/gameBase/player.h
+						public/gameBase/controllerSystemInterface.h
+						public/gameBase/gameMode.h
+						public/gameBase/cameraSystemInterface.h
+						public/gameBase/physicsSystemInterface.h
 
 						public/ecs/entity.h
 						public/ecs/entityRef.h	
@@ -98,17 +110,20 @@ target_sources( ${PROJECT_NAME}
 target_link_libraries( ${PROJECT_NAME}
 							PUBLIC 
 								orbCore
+								orbMath
 								d3d11
 								dxguid
 								dxgi
-)
+								Microsoft::DirectXTK
+								nlohmann_json::nlohmann_json )
+
 target_include_directories( ${PROJECT_NAME} 
 								PRIVATE
 									${ORB_SRC_ROOT_DIR}
 									${PROJECT_SOURCE_DIR}/public
 									${PROJECT_SOURCE_DIR}/private
-									${PROJECT_SOURCE_DIR}/public/base
-									${PROJECT_SOURCE_DIR}/private/base
+									${PROJECT_SOURCE_DIR}/public/gameBase
+									${PROJECT_SOURCE_DIR}/private/gameBase
 									${PROJECT_SOURCE_DIR}/public/ecs
 									${PROJECT_SOURCE_DIR}/private/ecs
 									${PROJECT_SOURCE_DIR}/public/components
@@ -116,16 +131,16 @@ target_include_directories( ${PROJECT_NAME}
 									${PROJECT_SOURCE_DIR}/public/ui
 									${PROJECT_SOURCE_DIR}/private/ui
 									${PROJECT_SOURCE_DIR}/public/ui/elements
-									${PROJECT_SOURCE_DIR}/private/ui/elements
-)
+									${PROJECT_SOURCE_DIR}/private/ui/elements )
+
 target_precompile_headers( ${PROJECT_NAME} 
 								PUBLIC
 									<functional>
 									<vector>
 									<algorithm>
-									<memory>
+									<nlohmann/json.hpp>
 									public/rendererTypes.h
 									public/engineTypes.h
+									public/orbForwards.h
 								PRIVATE
-									<Windows.h>
-)
+									<Windows.h> )

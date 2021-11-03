@@ -1,18 +1,5 @@
-#include "orbMath.h"
+#include "mathSerialization.h"
 
-
-namespace core
-{
-	float GetRoll( const Matrix& m )
-	{
-		return atan2f( m._12, m._11 );
-	}
-
-	bool IsZero( float val, float eps )
-	{
-		return abs( val ) <= eps;
-	}
-}
 
 namespace DirectX
 {
