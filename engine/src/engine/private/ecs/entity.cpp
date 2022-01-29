@@ -74,12 +74,12 @@ namespace core
 
 	Vector2 Entity::GetForward() const
 	{
-		return GetWorldTransform().Up();
+		return Vector2{ GetWorldTransform().Up() };
 	}
 
 	Vector2 Entity::GetRight() const
 	{
-		return GetWorldTransform().Right();
+		return Vector2{ GetWorldTransform().Right() };
 	}
 
 	bool Entity::Deserialize( const json& data )
