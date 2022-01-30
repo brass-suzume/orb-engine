@@ -13,6 +13,8 @@ int __stdcall WinMain(
 	int       nCmdShow
 )
 {
+
+
 	auto protoRuntimeStage = std::make_unique< proto::RuntimeStage >();
 
 	core::EngineInitData initData{ "OrbProto", std::move( protoRuntimeStage ), "level/empty" };

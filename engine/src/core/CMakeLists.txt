@@ -26,7 +26,9 @@ target_sources( ${PROJECT_NAME}
 						public/orbCommon.h
 						public/macroHelpers.h
 						public/typeRegistrar.h
-						public/callbackRegistry.h )
+						public/callbackRegistry.h
+						public/orbFormatters.h
+						public/orbFormatters.hpp )
 
 target_link_libraries( ${PROJECT_NAME}
 							PUBLIC
@@ -48,6 +50,7 @@ target_precompile_headers( ${PROJECT_NAME}
 									public/orbAssert.h
 									public/orbMath.h
 									public/orbCommon.h
+									public/orbFormatters.h
 									public/type.h
 									public/serializable.h
 									public/serializationHelpers.h
